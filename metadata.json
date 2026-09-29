@@ -2,5 +2,7 @@
   "name": "HP_Studio",
   "description": "HP Studio - Premier luxury wedding, pre-wedding, event, baby and automotive photoshoot studio based in Pune & Mumbai.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
