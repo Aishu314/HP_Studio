@@ -46,10 +46,10 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section className="pt-4 pb-10 px-1 sm:px-3">
-      <div className="w-[98%] max-w-[1680px] mx-auto">
-        {/* Banner with Rounded Corners */}
-        <div className="relative rounded-[28px] sm:rounded-[42px] overflow-hidden shadow-xl border border-[#E9DAC8] bg-[#221B19] aspect-[16/8] sm:aspect-[24/9] max-h-[540px]">
+    <section className="pt-3 pb-8 px-2 sm:px-4">
+      <div className="max-w-5xl mx-auto">
+        {/* Banner with Rounded Corners - Compact & Elegant */}
+        <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg border border-[#E9DAC8] bg-[#221B19] h-[210px] sm:h-[270px] md:h-[300px]">
           {/* Hero Image */}
           <img
             src={bannerImages[activeBanner]}
@@ -62,20 +62,20 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/45 pointer-events-none" />
 
           {/* Top Left Badge: Now Booking */}
-          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center gap-2">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-white/25 text-white text-xs sm:text-[13px] font-bold tracking-wide shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse"></span>
-              <span>Now Booking 2025–2026 Dates</span>
+          <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 flex items-center gap-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-bold tracking-wide shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+              <span>Now Booking Dates</span>
             </div>
           </div>
 
           {/* Top Right Badges: Banner Switcher + Pricing */}
-          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex items-center gap-2">
+          <div className="absolute top-3 right-3 sm:top-5 sm:right-5 z-10 flex items-center gap-2">
             {/* Banner Theme Switcher */}
-            <div className="hidden sm:inline-flex items-center gap-1 p-1 rounded-full bg-black/65 backdrop-blur-md border border-white/25 text-[11px] text-white">
+            <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-full bg-black/65 backdrop-blur-md border border-white/25 text-[11px] text-white">
               <button
                 onClick={() => setActiveBanner('palace')}
-                className={`px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeBanner === 'palace' ? 'bg-[#BF5C3E] text-white font-bold' : 'text-stone-300 hover:text-white'
                 }`}
               >
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({
               </button>
               <button
                 onClick={() => setActiveBanner('garden')}
-                className={`px-3 py-1 rounded-full transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-full transition-colors cursor-pointer ${
                   activeBanner === 'garden' ? 'bg-[#BF5C3E] text-white font-bold' : 'text-stone-300 hover:text-white'
                 }`}
               >
@@ -93,20 +93,20 @@ export const Hero: React.FC<HeroProps> = ({
 
             <button
               onClick={onNavigatePricing}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/95 hover:bg-white text-[#29221F] text-xs sm:text-[13px] font-bold tracking-wide backdrop-blur-md shadow-md border border-white/40 transition-all hover:scale-102 active:scale-98 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1 sm:py-1.5 rounded-full bg-white/95 hover:bg-white text-[#29221F] text-xs font-bold tracking-wide backdrop-blur-md shadow-md border border-white/40 transition-all hover:scale-102 active:scale-98 cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#C87D55]" />
-              <span>Pricing & Packages</span>
+              <Sparkles className="w-3 h-3 text-[#C87D55]" />
+              <span>Packages</span>
             </button>
           </div>
         </div>
 
         {/* Center Romantic Couple Medallion Logo & Verified Badge */}
-        <div className="flex justify-center -mt-16 sm:-mt-20 relative z-20">
+        <div className="flex justify-center -mt-12 sm:-mt-14 relative z-20">
           <div className="relative group">
             {/* Double Ornate Ring Container */}
-            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full p-1.5 bg-gradient-to-tr from-[#DEB097] via-[#FFFDF9] to-[#BF5C3E] shadow-2xl">
-              <div className="w-full h-full rounded-full border-4 border-[#FAF7F2] overflow-hidden bg-[#2D2422]">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[#DEB097] via-[#FFFDF9] to-[#BF5C3E] shadow-xl">
+              <div className="w-full h-full rounded-full border-3 border-[#FAF7F2] overflow-hidden bg-[#2D2422]">
                 {/* Real Couple Logo Image */}
                 <img
                   src={STUDIO_INFO.coupleLogo}
@@ -119,10 +119,10 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Verified checkmark badge */}
             <div
-              className="absolute bottom-2 right-2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#BF5C3E] text-white flex items-center justify-center border-2 border-[#FAF7F2] shadow-md"
+              className="absolute bottom-1.5 right-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#BF5C3E] text-white flex items-center justify-center border-2 border-[#FAF7F2] shadow-md"
               title="Verified Luxury Studio"
             >
-              <Check className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3]" />
+              <Check className="w-3.5 h-3.5 stroke-[3]" />
             </div>
           </div>
         </div>
