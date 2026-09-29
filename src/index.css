@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-script {
+    font-family: 'Alex Brush', cursive;
+  }
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom dashed border utility matching screenshot styling */
+.dashed-box {
+  border: 1.5px dashed rgba(200, 125, 85, 0.45);
+}
