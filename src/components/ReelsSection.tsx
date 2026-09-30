@@ -85,7 +85,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
               onClick={onOpenInstagram}
               className="text-xs font-bold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-xl hover:bg-[#FAF0E6] cursor-pointer border border-transparent hover:border-[#ECD9C6]"
             >
-              <span>Follow on Instagram (@HP_STUDIO_06)</span>
+              <span>Follow on Instagram ({STUDIO_INFO.handle})</span>
               <span className="text-sm">→</span>
             </button>
           </div>
@@ -165,7 +165,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
                 <div className="relative z-10 p-3 sm:p-4 text-white space-y-1.5">
                   <div className="flex items-center justify-between">
                     <p className="text-[11px] sm:text-xs font-semibold text-white/95 tracking-wide truncate">
-                      @HP_STUDIO_06
+                      {STUDIO_INFO.handle}
                     </p>
                     {/* Inline Audio Preview toggle button */}
                     <button

@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={onOpenInstagram}
             className="p-2 rounded-lg bg-[#FAF0E6] hover:bg-[#F5E6D8] text-[#C13584] border border-[#ECD9C6] transition-all hover:scale-105 cursor-pointer shadow-2xs"
-            title="Open Instagram Profile (@Hp_studio_06)"
+            title="Open Instagram Profile (@hp_studio1040)"
           >
             <Instagram className="w-4 h-4" />
           </button>

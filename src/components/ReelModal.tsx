@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { ReelItem } from '../types';
 import { audioEngine } from '../utils/audioEngine';
+import { STUDIO_INFO } from '../data/mockData';
 
 interface ReelModalProps {
   reels: ReelItem[];
@@ -291,7 +292,7 @@ export const ReelModal: React.FC<ReelModalProps> = ({
                   HP
                 </div>
                 <span className="font-semibold text-sm tracking-wide group-hover:text-amber-200 transition-colors">
-                  @HP_STUDIO_06
+                  {STUDIO_INFO.handle}
                 </span>
               </button>
 

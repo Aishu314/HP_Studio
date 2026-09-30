@@ -206,6 +206,7 @@ export default function App() {
         isOpen={isInstagramModalOpen}
         onClose={() => setIsInstagramModalOpen(false)}
         onShowToast={showToast}
+        onOpenBooking={() => handleOpenBooking()}
       />
 
       {/* Floating Elements */}

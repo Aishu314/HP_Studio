@@ -18,9 +18,9 @@ import supercarSpeedImg from '../assets/images/car_shoot_supercar_speed_17907173
 
 export const STUDIO_INFO = {
   name: 'HP STUDIO',
-  handle: '@Hp_studio_06',
-  instagramId: 'Hp_studio_06',
-  instagramUrl: 'https://www.instagram.com/Hp_studio_06/',
+  handle: '@hp_studio1040',
+  instagramId: 'hp_studio1040',
+  instagramUrl: 'https://www.instagram.com/hp_studio1040/',
   phone: '+91 9865404174',
   cleanPhone: '919865404174',
   email: 'Hpstudio@gmail.com',
