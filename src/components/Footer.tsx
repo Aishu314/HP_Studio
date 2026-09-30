@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Camera, Instagram, Phone, Mail, MapPin, ArrowUp, Star, ShieldCheck,
-  Award, Heart, Send, Sparkles, CheckCircle2
+  Award, Heart, Send, Sparkles, CheckCircle2, ExternalLink
 } from 'lucide-react';
 import { STUDIO_INFO, PORTFOLIO_ITEMS } from '../data/mockData';
 
@@ -52,32 +52,41 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInstagram }) => {
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <button
-                onClick={onOpenInstagram}
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-3 py-1 rounded-lg bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+                title="Open Original Instagram Profile"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
                 <span>Open Instagram Page</span>
-              </button>
+                <ExternalLink className="w-3 h-3 opacity-60" />
+              </a>
 
-              <button
-                onClick={onOpenInstagram}
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs font-semibold text-[#BF5C3E] hover:underline flex items-center gap-1 cursor-pointer"
+                title="Follow Original Account on Instagram"
               >
                 <span>Follow {STUDIO_INFO.handle}</span>
-                <span className="text-sm">→</span>
-              </button>
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
 
           {/* 6 Grid Photos */}
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
             {instaGrid.map((item, idx) => (
-              <button
+              <a
                 key={idx}
-                onClick={onOpenInstagram}
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative aspect-square rounded-2xl overflow-hidden bg-[#241E1C] border border-[#ECD9C6] shadow-2xs block cursor-pointer w-full text-left"
-                title={`View ${item.title} on Instagram (${STUDIO_INFO.handle})`}
+                title={`View ${item.title} on Original Instagram (${STUDIO_INFO.handle})`}
               >
                 <img
                   src={item.image}
@@ -89,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInstagram }) => {
                   <Instagram className="w-5 h-5 mb-1" />
                   <span className="text-[10px] font-medium text-center line-clamp-1">{STUDIO_INFO.handle}</span>
                 </div>
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -225,13 +234,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInstagram }) => {
                 <span>{STUDIO_INFO.email}</span>
               </a>
 
-              <button
-                onClick={onOpenInstagram}
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#BF5C3E] transition-colors cursor-pointer text-left"
+                title="Open Original Instagram Profile"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#BF5C3E]" />
                 <span>{STUDIO_INFO.handle}</span>
-              </button>
+              </a>
 
               <div className="pt-1">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF7EE] text-[#196B36] font-semibold text-[11px] border border-[#A2D9B2]">

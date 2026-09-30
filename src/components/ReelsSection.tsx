@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Music, Heart, ArrowUpRight, Volume2, Film, Instagram } from 'lucide-react';
+import { Play, Music, Heart, ArrowUpRight, Volume2, Film, Instagram, ExternalLink } from 'lucide-react';
 import { REELS_DATA, STUDIO_INFO } from '../data/mockData';
 import { ReelItem, CategoryType } from '../types';
 import { audioEngine } from '../utils/audioEngine';
@@ -72,22 +72,29 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
             </button>
 
             {/* Open Instagram Page CTA */}
-            <button
-              onClick={onOpenInstagram}
+            <a
+              href={STUDIO_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+              title="Open Original Instagram Profile"
             >
               <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
               <span>Open Instagram Page</span>
-            </button>
+              <ExternalLink className="w-3 h-3 opacity-60" />
+            </a>
 
             {/* Follow on Instagram link */}
-            <button
-              onClick={onOpenInstagram}
+            <a
+              href={STUDIO_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs font-bold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-xl hover:bg-[#FAF0E6] cursor-pointer border border-transparent hover:border-[#ECD9C6]"
+              title="Follow Original Account on Instagram"
             >
               <span>Follow on Instagram ({STUDIO_INFO.handle})</span>
-              <span className="text-sm">→</span>
-            </button>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
 
@@ -164,9 +171,15 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
                 {/* Bottom Details */}
                 <div className="relative z-10 p-3 sm:p-4 text-white space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <p className="text-[11px] sm:text-xs font-semibold text-white/95 tracking-wide truncate">
+                    <a
+                      href={STUDIO_INFO.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-[11px] sm:text-xs font-semibold text-white/95 tracking-wide truncate hover:underline hover:text-amber-200"
+                    >
                       {STUDIO_INFO.handle}
-                    </p>
+                    </a>
                     {/* Inline Audio Preview toggle button */}
                     <button
                       onClick={(e) => handleToggleInlineAudio(e, reel)}

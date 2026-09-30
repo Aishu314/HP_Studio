@@ -280,13 +280,13 @@ export const ReelModal: React.FC<ReelModalProps> = ({
           {/* Account & Title with Working Instagram Profile Links */}
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (onOpenInstagram) onOpenInstagram();
-                }}
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-2 group cursor-pointer text-left"
-                title="View HP Studio Instagram Profile"
+                title="View Original HP Studio Instagram Profile"
               >
                 <div className="w-8 h-8 rounded-full border border-white/50 bg-[#C87D55] flex items-center justify-center text-xs font-bold group-hover:scale-105 transition-transform">
                   HP
@@ -294,19 +294,19 @@ export const ReelModal: React.FC<ReelModalProps> = ({
                 <span className="font-semibold text-sm tracking-wide group-hover:text-amber-200 transition-colors">
                   {STUDIO_INFO.handle}
                 </span>
-              </button>
+              </a>
 
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (onOpenInstagram) onOpenInstagram();
-                }}
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="bg-gradient-to-r from-[#E1306C] to-[#F77737] hover:brightness-110 text-white font-bold px-2.5 py-0.5 rounded-full text-[10.5px] shadow-xs flex items-center gap-1 cursor-pointer transition-all active:scale-95"
-                title="Follow on Instagram"
+                title="Follow Original Account on Instagram"
               >
                 <Instagram className="w-3 h-3" />
                 <span>Follow</span>
-              </button>
+              </a>
             </div>
 
             <button
