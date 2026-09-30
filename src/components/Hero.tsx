@@ -127,49 +127,49 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Attractive Royal Marquee Box for HP STUDIO Heading & Description */}
-        <div className="max-w-4xl mx-auto mt-4 sm:mt-6">
-          <div className="relative rounded-[32px] sm:rounded-[40px] p-1.5 sm:p-2 bg-gradient-to-b from-[#EED9C7] via-[#FAF6EF] to-[#DEB097] shadow-xl shadow-[#4A2619]/8">
-            <div className="relative rounded-[28px] sm:rounded-[34px] px-6 py-7 sm:px-12 sm:py-9 bg-gradient-to-b from-[#FFFDFB] via-[#FAF5EE] to-[#F5EBE0] border border-dashed border-[#C88A6F]/50 text-center space-y-3 sm:space-y-4 overflow-hidden">
+        {/* Attractive Royal Marquee Box for HP STUDIO Heading & Description - Balanced & Elegant */}
+        <div className="max-w-2xl sm:max-w-3xl mx-auto mt-3 sm:mt-4">
+          <div className="relative rounded-[26px] sm:rounded-[32px] p-1 sm:p-1.5 bg-gradient-to-b from-[#EED9C7] via-[#FAF6EF] to-[#DEB097] shadow-lg shadow-[#4A2619]/6">
+            <div className="relative rounded-[22px] sm:rounded-[28px] px-5 py-5 sm:px-8 sm:py-6 bg-gradient-to-b from-[#FFFDFB] via-[#FAF5EE] to-[#F5EBE0] border border-dashed border-[#C88A6F]/45 text-center space-y-2 sm:space-y-3 overflow-hidden">
               
               {/* Decorative Corner Ornaments */}
-              <div className="absolute top-3.5 left-4 text-[#C88A6F]/60 text-xs sm:text-sm select-none">✦</div>
-              <div className="absolute top-3.5 right-4 text-[#C88A6F]/60 text-xs sm:text-sm select-none">✦</div>
-              <div className="absolute bottom-3.5 left-4 text-[#C88A6F]/60 text-xs sm:text-sm select-none">✦</div>
-              <div className="absolute bottom-3.5 right-4 text-[#C88A6F]/60 text-xs sm:text-sm select-none">✦</div>
+              <div className="absolute top-2.5 left-3 text-[#C88A6F]/50 text-xs select-none">✦</div>
+              <div className="absolute top-2.5 right-3 text-[#C88A6F]/50 text-xs select-none">✦</div>
+              <div className="absolute bottom-2.5 left-3 text-[#C88A6F]/50 text-xs select-none">✦</div>
+              <div className="absolute bottom-2.5 right-3 text-[#C88A6F]/50 text-xs select-none">✦</div>
 
               {/* Ambient radial glow inside box */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-72 h-36 bg-[#F5D8C3]/30 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-60 h-28 bg-[#F5D8C3]/25 rounded-full blur-xl pointer-events-none" />
 
               {/* Top Royal Heritage Badge */}
-              <div className="relative z-10 inline-flex items-center justify-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF0E6] border border-[#ECD9C6] text-[11px] font-extrabold tracking-[0.28em] uppercase text-[#944D33]">
-                <Crown className="w-3.5 h-3.5 text-[#BF5C3E]" />
+              <div className="relative z-10 inline-flex items-center justify-center gap-1.5 px-3 py-0.5 rounded-full bg-[#FAF0E6] border border-[#ECD9C6] text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] uppercase text-[#944D33]">
+                <Crown className="w-3 h-3 text-[#BF5C3E]" />
                 <span>EST. 2018 · PUNE & MUMBAI · CINEMATOGRAPHY</span>
-                <Crown className="w-3.5 h-3.5 text-[#BF5C3E]" />
+                <Crown className="w-3 h-3 text-[#BF5C3E]" />
               </div>
 
-              {/* Bolder, Attractive HP STUDIO Heading */}
-              <h1 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-[0.18em] sm:tracking-[0.24em] text-[#1A1210] uppercase drop-shadow-sm select-none leading-none">
+              {/* Refined, Elegant HP STUDIO Heading (Significantly Minimized & Proportionate) */}
+              <h1 className="relative z-10 font-serif-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-[0.16em] sm:tracking-[0.22em] text-[#1E1715] uppercase select-none leading-tight">
                 H P &nbsp; S T U D I O
               </h1>
 
               {/* Decorative Divider */}
-              <div className="relative z-10 flex items-center justify-center gap-3 text-[#BF5C3E]/50 my-1">
-                <span className="w-12 sm:w-20 h-px bg-gradient-to-r from-transparent to-[#BF5C3E]/40"></span>
-                <span className="text-xs">✧ &nbsp; ⚜ &nbsp; ✧</span>
-                <span className="w-12 sm:w-20 h-px bg-gradient-to-l from-transparent to-[#BF5C3E]/40"></span>
+              <div className="relative z-10 flex items-center justify-center gap-2.5 text-[#BF5C3E]/45 my-0.5">
+                <span className="w-8 sm:w-14 h-px bg-gradient-to-r from-transparent to-[#BF5C3E]/35"></span>
+                <span className="text-[11px]">✧ &nbsp; ⚜ &nbsp; ✧</span>
+                <span className="w-8 sm:w-14 h-px bg-gradient-to-l from-transparent to-[#BF5C3E]/35"></span>
               </div>
 
-              {/* Attractively Written Editorial Description */}
-              <p className="relative z-10 font-serif-display text-base sm:text-xl lg:text-2xl text-[#4A3C37] max-w-2xl mx-auto leading-relaxed px-2 font-normal">
+              {/* Attractively Written Editorial Description - Balanced Size */}
+              <p className="relative z-10 font-serif-display text-xs sm:text-sm lg:text-base text-[#4A3C37] max-w-xl mx-auto leading-relaxed px-1 font-normal">
                 <span className="italic">Crafting timeless poetry from your most sacred celebrations.</span>{' '}
-                <span className="font-semibold text-[#221917]">Master photographers</span> for{' '}
+                <span className="font-medium text-[#221917]">Master photographers</span> for{' '}
                 <span className="text-[#9E462A] font-semibold">royal weddings</span>, heartfelt birthdays,{' '}
                 <span className="text-[#9E462A] font-semibold">baby milestones</span>, and forever memories—preserving raw emotions that become immortal heirlooms.
               </p>
 
               {/* Studio Destinations Tagline Strip inside the Box */}
-              <div className="relative z-10 pt-1 flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#8C7A72]">
+              <div className="relative z-10 pt-0.5 flex flex-wrap items-center justify-center gap-1.5 text-[9.5px] sm:text-[10.5px] font-medium tracking-wider uppercase text-[#8C7A72]">
                 <span>Pune (Koregaon Park)</span>
                 <span>·</span>
                 <span>Mumbai (Bandra West)</span>

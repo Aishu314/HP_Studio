@@ -102,20 +102,28 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({
                     : 'bg-[#FFFDFB] text-[#241E1C] border border-[#E8DACB] shadow-sm hover:shadow-md'
                 }`}
               >
-                {/* Popular / Feature Tag */}
-                {pkg.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                {/* Feature / Category Badge - 100% visible, properly aligned, responsive */}
+                <div className="mb-3.5 flex items-center justify-between flex-wrap gap-2">
+                  {pkg.badge ? (
                     <span
-                      className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase shadow-sm ${
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10.5px] sm:text-xs font-bold tracking-wider uppercase shadow-xs ${
                         pkg.popular
-                          ? 'bg-[#BF5C3E] text-white'
+                          ? 'bg-[#BF5C3E] text-white shadow-sm'
                           : 'bg-[#FAF0E6] text-[#8C482B] border border-[#ECD9C6]'
                       }`}
                     >
-                      {pkg.badge}
+                      <Sparkles className="w-3 h-3 text-current shrink-0" />
+                      <span className="whitespace-normal leading-tight">{pkg.badge}</span>
                     </span>
-                  </div>
-                )}
+                  ) : (
+                    <div />
+                  )}
+                  {pkg.popular && (
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-amber-200 bg-white/10 px-2 py-0.5 rounded-md">
+                      Featured
+                    </span>
+                  )}
+                </div>
 
                 <div>
                   <h3

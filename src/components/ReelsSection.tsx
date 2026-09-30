@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Music, Heart, ArrowUpRight, Volume2, Film } from 'lucide-react';
+import { Play, Music, Heart, ArrowUpRight, Volume2, Film, Instagram } from 'lucide-react';
 import { REELS_DATA, STUDIO_INFO } from '../data/mockData';
 import { ReelItem, CategoryType } from '../types';
 import { audioEngine } from '../utils/audioEngine';
@@ -60,7 +60,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
             </h2>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <button
               onClick={onOpenMusicLibrary}
               className="px-3.5 py-1.5 rounded-xl bg-[#FAF0E6] hover:bg-[#F2DEC9] text-[#783921] border border-[#ECD9C6] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
@@ -69,11 +69,29 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
               <span>Bollywood Music Vault (8 Tracks)</span>
             </button>
 
+            {/* Open Instagram Page CTA */}
             <a
               href={STUDIO_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-semibold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors"
+              onClick={() => {
+                window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+              }}
+              className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+            >
+              <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
+              <span>Open Instagram Page</span>
+            </a>
+
+            {/* Follow on Instagram link */}
+            <a
+              href={STUDIO_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+              }}
+              className="text-xs font-bold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors px-2 py-1 rounded-lg hover:bg-[#FAF0E6] cursor-pointer"
             >
               <span>Follow on Instagram</span>
               <span className="text-sm">→</span>

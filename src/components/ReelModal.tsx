@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
   X, Play, Pause, Volume2, VolumeX, Heart, MessageCircle, Share2,
-  Bookmark, ChevronUp, ChevronDown, Music, Check, Send, Sparkles, Disc
+  Bookmark, ChevronUp, ChevronDown, Music, Check, Send, Sparkles, Disc,
+  Instagram, ArrowUpRight
 } from 'lucide-react';
 import { ReelItem } from '../types';
 import { audioEngine } from '../utils/audioEngine';
@@ -273,13 +274,57 @@ export const ReelModal: React.FC<ReelModalProps> = ({
             />
           </div>
 
-          {/* Account & Title */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full border border-white/50 bg-[#C87D55] flex items-center justify-center text-xs font-bold">
-              HP
+          {/* Account & Title with Working Instagram Profile Links */}
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.instagram.com/hp_studio_06/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+                }}
+                className="flex items-center gap-2 group cursor-pointer"
+                title="Open HP Studio on Instagram"
+              >
+                <div className="w-8 h-8 rounded-full border border-white/50 bg-[#C87D55] flex items-center justify-center text-xs font-bold group-hover:scale-105 transition-transform">
+                  HP
+                </div>
+                <span className="font-semibold text-sm tracking-wide group-hover:text-amber-200 transition-colors">
+                  @HP_STUDIO_06
+                </span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/hp_studio_06/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+                }}
+                className="bg-gradient-to-r from-[#E1306C] to-[#F77737] hover:brightness-110 text-white font-bold px-2.5 py-0.5 rounded-full text-[10.5px] shadow-xs flex items-center gap-1 cursor-pointer transition-all"
+                title="Follow on Instagram"
+              >
+                <Instagram className="w-3 h-3" />
+                <span>Follow</span>
+              </a>
             </div>
-            <span className="font-semibold text-sm tracking-wide">@HP_STUDIO_06</span>
-            <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full text-[10px]">Follow</span>
+
+            <a
+              href="https://www.instagram.com/hp_studio_06/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+              }}
+              className="text-[10px] sm:text-[11px] bg-white/15 hover:bg-white/25 text-white font-medium px-2.5 py-1 rounded-full backdrop-blur-md transition-colors flex items-center gap-1 cursor-pointer"
+            >
+              <span>Open Instagram Page</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
           </div>
 
           <p className="text-xs text-white/90 line-clamp-2 max-w-[80%] leading-relaxed drop-shadow-xs">

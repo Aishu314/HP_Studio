@@ -47,15 +47,33 @@ export const Footer: React.FC = () => {
                 Follow Our Daily Journey on Instagram
               </span>
             </div>
-            <a
-              href={STUDIO_INFO.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-[#BF5C3E] hover:underline flex items-center gap-1"
-            >
-              <span>{STUDIO_INFO.handle}</span>
-              <span className="text-sm">→</span>
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+                }}
+                className="px-3 py-1 rounded-lg bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+              >
+                <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
+                <span>Open Instagram Page</span>
+              </a>
+
+              <a
+                href={STUDIO_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+                }}
+                className="text-xs font-semibold text-[#BF5C3E] hover:underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>Follow {STUDIO_INFO.handle}</span>
+                <span className="text-sm">→</span>
+              </a>
+            </div>
           </div>
 
           {/* 6 Grid Photos */}
@@ -66,7 +84,10 @@ export const Footer: React.FC = () => {
                 href={STUDIO_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-square rounded-2xl overflow-hidden bg-[#241E1C] border border-[#ECD9C6] shadow-2xs block"
+                onClick={() => {
+                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+                }}
+                className="group relative aspect-square rounded-2xl overflow-hidden bg-[#241E1C] border border-[#ECD9C6] shadow-2xs block cursor-pointer"
               >
                 <img
                   src={item.image}

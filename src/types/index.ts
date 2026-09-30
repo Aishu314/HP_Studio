@@ -76,7 +76,7 @@ export interface MusicTrack {
   mood: string;
   instruments: string[];
   licenseType: string;
-  licenseBadge: 'Royalty-Free Sync' | 'HP Master Sync' | 'Commercial Creator License';
+  licenseBadge: 'Royalty-Free Sync' | 'HP Master Sync' | 'Commercial Creator License' | 'Original Song';
   popularFor: string;
 }
 
