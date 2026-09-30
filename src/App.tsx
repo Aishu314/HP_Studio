@@ -13,6 +13,7 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { BookingSystemModal } from './components/BookingSystemModal';
 import { MusicLibraryModal } from './components/MusicLibraryModal';
 import { MyBookingsModal } from './components/MyBookingsModal';
+import { InstagramModal } from './components/InstagramModal';
 import { ConfirmedBooking, MusicTrack } from './types';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
   const [bookingPackageId, setBookingPackageId] = useState<string | undefined>(undefined);
   const [isMusicLibraryOpen, setIsMusicLibraryOpen] = useState(false);
   const [isMyBookingsOpen, setIsMyBookingsOpen] = useState(false);
+  const [isInstagramModalOpen, setIsInstagramModalOpen] = useState(false);
   const [selectedSyncedTrack, setSelectedSyncedTrack] = useState<MusicTrack | undefined>(undefined);
 
   const showToast = (msg: string) => {
@@ -98,6 +100,7 @@ export default function App() {
         onOpenBooking={() => handleOpenBooking()}
         onOpenMusicLibrary={() => setIsMusicLibraryOpen(true)}
         onOpenMyBookings={() => setIsMyBookingsOpen(true)}
+        onOpenInstagram={() => setIsInstagramModalOpen(true)}
         onOpenEnquiry={handleOpenEnquiry}
         onNavigatePricing={handleNavigatePricing}
         onNavigatePortfolio={handleNavigatePortfolio}
@@ -142,6 +145,7 @@ export default function App() {
             handleOpenBooking();
           }}
           onOpenMusicLibrary={() => setIsMusicLibraryOpen(true)}
+          onOpenInstagram={() => setIsInstagramModalOpen(true)}
           onShowToast={showToast}
         />
 
@@ -163,7 +167,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenInstagram={() => setIsInstagramModalOpen(true)} />
 
       {/* Booking System Modal */}
       <BookingSystemModal
@@ -194,6 +198,13 @@ export default function App() {
         isOpen={isMyBookingsOpen}
         onClose={() => setIsMyBookingsOpen(false)}
         onBookNewShoot={() => handleOpenBooking()}
+        onShowToast={showToast}
+      />
+
+      {/* Official Instagram Profile & Connect Modal */}
+      <InstagramModal
+        isOpen={isInstagramModalOpen}
+        onClose={() => setIsInstagramModalOpen(false)}
         onShowToast={showToast}
       />
 

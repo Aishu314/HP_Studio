@@ -6,6 +6,7 @@ interface NavbarProps {
   onOpenBooking: () => void;
   onOpenMusicLibrary: () => void;
   onOpenMyBookings: () => void;
+  onOpenInstagram?: () => void;
   onOpenEnquiry: (service?: string) => void;
   onNavigatePricing: () => void;
   onNavigatePortfolio: () => void;
@@ -16,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenBooking,
   onOpenMusicLibrary,
   onOpenMyBookings,
+  onOpenInstagram,
   onOpenEnquiry,
   onNavigatePricing,
   onNavigatePortfolio,
@@ -92,18 +94,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Buttons Zone */}
         <div className="hidden sm:flex items-center gap-2.5">
-          <a
-            href={STUDIO_INFO.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-            }}
+          <button
+            onClick={onOpenInstagram}
             className="p-2 rounded-lg bg-[#FAF0E6] hover:bg-[#F5E6D8] text-[#C13584] border border-[#ECD9C6] transition-all hover:scale-105 cursor-pointer shadow-2xs"
-            title="Open Instagram Page"
+            title="Open Instagram Profile (@Hp_studio_06)"
           >
             <Instagram className="w-4 h-4" />
-          </a>
+          </button>
           <button
             onClick={onOpenBooking}
             className="px-3.5 py-2 rounded-lg bg-[#FAF0E6] hover:bg-[#F5E6D8] text-[#8C482B] text-xs font-semibold flex items-center gap-1.5 border border-[#ECD9C6] transition-all hover:shadow-xs cursor-pointer"
@@ -180,22 +177,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               My Scheduled Bookings
             </button>
-            <a
-              href={STUDIO_INFO.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               onClick={() => {
-                window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
+                if (onOpenInstagram) onOpenInstagram();
                 setMobileMenuOpen(false);
               }}
-              className="py-2 hover:text-[#C87D55] flex items-center justify-between text-[#8C3A24]"
+              className="py-2 hover:text-[#C87D55] flex items-center justify-between text-[#8C3A24] w-full text-left cursor-pointer"
             >
               <span className="flex items-center gap-2">
                 <Instagram className="w-4 h-4 text-[#C13584]" />
                 <span>Open Instagram Page</span>
               </span>
-              <span className="text-xs text-[#8C482B]">{STUDIO_INFO.handle}</span>
-            </a>
+              <span className="text-xs text-[#8C482B] font-mono">{STUDIO_INFO.handle}</span>
+            </button>
           </div>
 
           <div className="pt-3 border-t border-[#ECD9C6] flex gap-2">

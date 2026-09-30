@@ -14,6 +14,7 @@ interface ReelModalProps {
   onNavigateReel: (index: number) => void;
   onBookReelVibe: (reelTitle: string, category: string) => void;
   onOpenMusicLibrary?: () => void;
+  onOpenInstagram?: () => void;
   onShowToast: (message: string) => void;
 }
 
@@ -24,6 +25,7 @@ export const ReelModal: React.FC<ReelModalProps> = ({
   onNavigateReel,
   onBookReelVibe,
   onOpenMusicLibrary,
+  onOpenInstagram,
   onShowToast,
 }) => {
   const reel = reels[currentReelIndex];
@@ -277,16 +279,13 @@ export const ReelModal: React.FC<ReelModalProps> = ({
           {/* Account & Title with Working Instagram Profile Links */}
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
-              <a
-                href="https://www.instagram.com/hp_studio_06/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+                  if (onOpenInstagram) onOpenInstagram();
                 }}
-                className="flex items-center gap-2 group cursor-pointer"
-                title="Open HP Studio on Instagram"
+                className="flex items-center gap-2 group cursor-pointer text-left"
+                title="View HP Studio Instagram Profile"
               >
                 <div className="w-8 h-8 rounded-full border border-white/50 bg-[#C87D55] flex items-center justify-center text-xs font-bold group-hover:scale-105 transition-transform">
                   HP
@@ -294,37 +293,31 @@ export const ReelModal: React.FC<ReelModalProps> = ({
                 <span className="font-semibold text-sm tracking-wide group-hover:text-amber-200 transition-colors">
                   @HP_STUDIO_06
                 </span>
-              </a>
+              </button>
 
-              <a
-                href="https://www.instagram.com/hp_studio_06/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+                  if (onOpenInstagram) onOpenInstagram();
                 }}
-                className="bg-gradient-to-r from-[#E1306C] to-[#F77737] hover:brightness-110 text-white font-bold px-2.5 py-0.5 rounded-full text-[10.5px] shadow-xs flex items-center gap-1 cursor-pointer transition-all"
+                className="bg-gradient-to-r from-[#E1306C] to-[#F77737] hover:brightness-110 text-white font-bold px-2.5 py-0.5 rounded-full text-[10.5px] shadow-xs flex items-center gap-1 cursor-pointer transition-all active:scale-95"
                 title="Follow on Instagram"
               >
                 <Instagram className="w-3 h-3" />
                 <span>Follow</span>
-              </a>
+              </button>
             </div>
 
-            <a
-              href="https://www.instagram.com/hp_studio_06/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               onClick={(e) => {
                 e.stopPropagation();
-                window.open('https://www.instagram.com/hp_studio_06/', '_blank', 'noopener,noreferrer');
+                if (onOpenInstagram) onOpenInstagram();
               }}
               className="text-[10px] sm:text-[11px] bg-white/15 hover:bg-white/25 text-white font-medium px-2.5 py-1 rounded-full backdrop-blur-md transition-colors flex items-center gap-1 cursor-pointer"
             >
               <span>Open Instagram Page</span>
               <ArrowUpRight className="w-3 h-3" />
-            </a>
+            </button>
           </div>
 
           <p className="text-xs text-white/90 line-clamp-2 max-w-[80%] leading-relaxed drop-shadow-xs">

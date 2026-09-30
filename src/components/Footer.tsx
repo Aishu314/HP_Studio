@@ -5,7 +5,11 @@ import {
 } from 'lucide-react';
 import { STUDIO_INFO, PORTFOLIO_ITEMS } from '../data/mockData';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenInstagram?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenInstagram }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -48,46 +52,32 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href={STUDIO_INFO.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-                }}
+              <button
+                onClick={onOpenInstagram}
                 className="px-3 py-1 rounded-lg bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
                 <span>Open Instagram Page</span>
-              </a>
+              </button>
 
-              <a
-                href={STUDIO_INFO.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-                }}
+              <button
+                onClick={onOpenInstagram}
                 className="text-xs font-semibold text-[#BF5C3E] hover:underline flex items-center gap-1 cursor-pointer"
               >
                 <span>Follow {STUDIO_INFO.handle}</span>
                 <span className="text-sm">→</span>
-              </a>
+              </button>
             </div>
           </div>
 
           {/* 6 Grid Photos */}
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
             {instaGrid.map((item, idx) => (
-              <a
+              <button
                 key={idx}
-                href={STUDIO_INFO.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-                }}
-                className="group relative aspect-square rounded-2xl overflow-hidden bg-[#241E1C] border border-[#ECD9C6] shadow-2xs block cursor-pointer"
+                onClick={onOpenInstagram}
+                className="group relative aspect-square rounded-2xl overflow-hidden bg-[#241E1C] border border-[#ECD9C6] shadow-2xs block cursor-pointer w-full text-left"
+                title={`View ${item.title} on Instagram (${STUDIO_INFO.handle})`}
               >
                 <img
                   src={item.image}
@@ -95,10 +85,11 @@ export const Footer: React.FC = () => {
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                  <Instagram className="w-5 h-5" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-2">
+                  <Instagram className="w-5 h-5 mb-1" />
+                  <span className="text-[10px] font-medium text-center line-clamp-1">{STUDIO_INFO.handle}</span>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -234,15 +225,13 @@ export const Footer: React.FC = () => {
                 <span>{STUDIO_INFO.email}</span>
               </a>
 
-              <a
-                href={STUDIO_INFO.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#BF5C3E] transition-colors"
+              <button
+                onClick={onOpenInstagram}
+                className="flex items-center gap-2 hover:text-[#BF5C3E] transition-colors cursor-pointer text-left"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#BF5C3E]" />
                 <span>{STUDIO_INFO.handle}</span>
-              </a>
+              </button>
 
               <div className="pt-1">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF7EE] text-[#196B36] font-semibold text-[11px] border border-[#A2D9B2]">

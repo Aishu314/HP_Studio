@@ -8,12 +8,14 @@ import { ReelModal } from './ReelModal';
 interface ReelsSectionProps {
   onOpenEnquiry: (serviceName?: string) => void;
   onOpenMusicLibrary: () => void;
+  onOpenInstagram?: () => void;
   onShowToast: (message: string) => void;
 }
 
 export const ReelsSection: React.FC<ReelsSectionProps> = ({
   onOpenEnquiry,
   onOpenMusicLibrary,
+  onOpenInstagram,
   onShowToast,
 }) => {
   const [activeReelIndex, setActiveReelIndex] = useState<number | null>(null);
@@ -70,32 +72,22 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
             </button>
 
             {/* Open Instagram Page CTA */}
-            <a
-              href={STUDIO_INFO.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-              }}
+            <button
+              onClick={onOpenInstagram}
               className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#E1306C]/10 to-[#F77737]/10 hover:from-[#E1306C]/20 hover:to-[#F77737]/20 text-[#8C3A24] border border-[#EACEC0] text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs"
             >
               <Instagram className="w-3.5 h-3.5 text-[#C13584]" />
               <span>Open Instagram Page</span>
-            </a>
+            </button>
 
             {/* Follow on Instagram link */}
-            <a
-              href={STUDIO_INFO.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                window.open(STUDIO_INFO.instagramUrl, '_blank', 'noopener,noreferrer');
-              }}
-              className="text-xs font-bold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors px-2 py-1 rounded-lg hover:bg-[#FAF0E6] cursor-pointer"
+            <button
+              onClick={onOpenInstagram}
+              className="text-xs font-bold text-[#8C482B] hover:text-[#BF5C3E] flex items-center gap-1 transition-colors px-2.5 py-1.5 rounded-xl hover:bg-[#FAF0E6] cursor-pointer border border-transparent hover:border-[#ECD9C6]"
             >
-              <span>Follow on Instagram</span>
+              <span>Follow on Instagram (@HP_STUDIO_06)</span>
               <span className="text-sm">→</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -225,6 +217,7 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
           onNavigateReel={(idx) => setActiveReelIndex(idx)}
           onBookReelVibe={handleBookFromReel}
           onOpenMusicLibrary={onOpenMusicLibrary}
+          onOpenInstagram={onOpenInstagram}
           onShowToast={onShowToast}
         />
       )}
